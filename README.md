@@ -22,25 +22,37 @@ A complete frontend application for managing college operations including studen
 - **Recharts** - Chart library
 - **React Toastify** - Notifications
 
-## 📦 Installation
+## 📦 Installation & Setup
 
-1. Clone the repository:
-```bash
-git clone https://github.com/neerjram/colledge_managment_system.git
-cd colledge_managment_system
-```
+### For Frontend (Current)
 
-2. Install dependencies:
-```bash
-npm install
-```
+1. **Clone the repository to your local machine:**
+   ```bash
+   git clone https://github.com/neerjram/colledge_managment_system.git
+   cd colledge_managment_system
+   ```
 
-3. Start the development server:
-```bash
-npm run dev
-```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-4. Open your browser and navigate to `http://localhost:5173` (or the port shown in terminal)
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser and navigate to:**
+   - `http://localhost:5173` (or the port shown in terminal)
+
+### For Backend Development
+
+See **[BACKEND_PLAN.md](./BACKEND_PLAN.md)** for complete backend and database development guide, including:
+- Database schema design
+- API endpoint specifications
+- Task division for team members
+- Development flowchart
+- SQL query examples
 
 ## 🎯 Usage
 
@@ -128,4 +140,15 @@ This project is part of a DBMS project.
 
 ## 📄 Status
 
-This is the frontend application. Backend API integration is pending.
+- ✅ **Frontend:** Complete and working with mock data
+- 🚧 **Backend:** In development (see [BACKEND_PLAN.md](./BACKEND_PLAN.md))
+- 🚧 **Database:** Pending (see [BACKEND_PLAN.md](./BACKEND_PLAN.md))
+
+## 📚 Documentation
+
+- **[BACKEND_PLAN.md](./BACKEND_PLAN.md)** - Complete backend development guide with:
+  - Database schema design
+  - API specifications
+  - Task division for 3 team members
+  - Development flowchart
+  - SQL query examples
