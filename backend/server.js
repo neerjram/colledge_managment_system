@@ -3,11 +3,11 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { testConnection } from './config/database.js';
 
-// Import routes (will be created by Person 2 & 3)
+// Import routes
+import studentsRoutes from './routes/studentsRoutes.js';
+import facultyRoutes from './routes/facultyRoutes.js';
+import coursesRoutes from './routes/coursesRoutes.js';
 // import dashboardRoutes from './routes/dashboardRoutes.js';
-// import studentsRoutes from './routes/studentsRoutes.js';
-// import facultyRoutes from './routes/facultyRoutes.js';
-// import coursesRoutes from './routes/coursesRoutes.js';
 // import departmentsRoutes from './routes/departmentsRoutes.js';
 // import enrollmentsRoutes from './routes/enrollmentsRoutes.js';
 // import reportsRoutes from './routes/reportsRoutes.js';
@@ -34,11 +34,11 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// API Routes (will be uncommented as they are created)
+// API Routes
+app.use('/api/students', studentsRoutes);
+app.use('/api/faculty', facultyRoutes);
+app.use('/api/courses', coursesRoutes);
 // app.use('/api/dashboard', dashboardRoutes);
-// app.use('/api/students', studentsRoutes);
-// app.use('/api/faculty', facultyRoutes);
-// app.use('/api/courses', coursesRoutes);
 // app.use('/api/departments', departmentsRoutes);
 // app.use('/api/enrollments', enrollmentsRoutes);
 // app.use('/api/reports', reportsRoutes);
