@@ -42,7 +42,7 @@ START
   │     │
   │     ├─► Design ER Diagram
   │     ├─► Create Database Schema
-  │     ├─► Create Tables (students, faculty, courses, departments, enrollments, admin)
+  │     ├─► Create Tables (students, faculty, courses, departments, enrollments)
   │     ├─► Add Foreign Keys & Constraints
   │     ├─► Insert Sample Data
   │     └─► Test Queries (SELECT, INSERT, UPDATE, DELETE)
@@ -50,7 +50,7 @@ START
   ├─► [Phase 2: Backend Setup]
   │     │
   │     ├─► Initialize Node.js Project
-  │     ├─► Install Dependencies (express, mysql2/pg, cors, dotenv, bcrypt, jsonwebtoken)
+  │     ├─► Install Dependencies (express, mysql2/pg, cors, dotenv)
   │     ├─► Setup Project Structure
   │     ├─► Configure Database Connection
   │     ├─► Setup Environment Variables
@@ -58,7 +58,6 @@ START
   │
   ├─► [Phase 3: API Development]
   │     │
-  │     ├─► Authentication Routes (/api/admin/login)
   │     ├─► Dashboard Route (/api/dashboard)
   │     ├─► Students CRUD (/api/students)
   │     ├─► Faculty CRUD (/api/faculty)
@@ -116,14 +115,6 @@ END
 │ id (PK)     │     │
 │ student_id  │─────┘
 │ course_id   │─────┘
-└─────────────┘
-
-┌─────────────┐
-│    Admin    │
-├─────────────┤
-│ id (PK)     │
-│ username    │
-│ password    │
 └─────────────┘
 ```
 
@@ -187,17 +178,8 @@ CREATE TABLE enrollments (
 );
 ```
 
-#### 6. Admin Table
-```sql
-CREATE TABLE admin (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
 ---
+
 
 ## 🔧 Backend Technology Stack
 
@@ -205,7 +187,6 @@ CREATE TABLE admin (
 - **Framework:** Express.js
 - **Database:** MySQL or PostgreSQL
 - **ORM/Query Builder:** mysql2 or pg (native SQL)
-- **Authentication:** JWT (jsonwebtoken) + bcrypt
 - **Environment:** dotenv
 - **CORS:** cors middleware
 
@@ -218,7 +199,6 @@ backend/
 ├── config/
 │   └── database.js          # Database connection
 ├── controllers/
-│   ├── authController.js
 │   ├── dashboardController.js
 │   ├── studentsController.js
 │   ├── facultyController.js
@@ -227,7 +207,6 @@ backend/
 │   ├── enrollmentsController.js
 │   └── reportsController.js
 ├── routes/
-│   ├── authRoutes.js
 │   ├── dashboardRoutes.js
 │   ├── studentsRoutes.js
 │   ├── facultyRoutes.js
@@ -236,7 +215,6 @@ backend/
 │   ├── enrollmentsRoutes.js
 │   └── reportsRoutes.js
 ├── middleware/
-│   ├── authMiddleware.js    # JWT verification
 │   └── errorHandler.js
 ├── models/
 │   └── queries.js           # SQL queries
@@ -251,9 +229,6 @@ backend/
 ---
 
 ## 🔌 API Endpoints Specification
-
-### Authentication
-- `POST /api/admin/login` - Admin login
 
 ### Dashboard
 - `GET /api/dashboard` - Get statistics
@@ -320,18 +295,10 @@ backend/
    - Create basic Express server
    - Setup CORS middleware
 
-3. ✅ Authentication System
-   - Create admin table
-   - Implement login endpoint
-   - Setup JWT token generation
-   - Create authentication middleware
-   - Hash passwords with bcrypt
-
 **Deliverables:**
 - Database schema SQL file
 - Database connection working
 - Basic server running
-- Login API working
 
 ---
 
@@ -395,7 +362,6 @@ backend/
    - Update frontend to use real API (set VITE_USE_MOCKS=false)
    - Test all pages with backend
    - Fix any integration issues
-   - Test authentication flow
 
 **Deliverables:**
 - Enrollments API working
@@ -409,7 +375,7 @@ backend/
 
 ### Week 1
 - **Day 1-2:** Person 1 - Database design & setup
-- **Day 3-4:** Person 1 - Backend setup & authentication
+- **Day 3-4:** Person 1 - Backend setup & basic server
 - **Day 5:** All - Review & testing
 
 ### Week 2
@@ -438,7 +404,6 @@ backend/
 
 ### API Testing
 - [ ] All endpoints return correct status codes
-- [ ] Authentication working
 - [ ] CRUD operations working
 - [ ] Search functionality working
 - [ ] JOIN queries returning correct data
@@ -547,7 +512,7 @@ JOIN courses c ON e.course_id = c.id;
    ```bash
    cd backend
    npm init -y
-   npm install express mysql2 cors dotenv bcrypt jsonwebtoken
+   npm install express mysql2 cors dotenv
    ```
 4. Start development!
 
@@ -571,7 +536,6 @@ JOIN courses c ON e.course_id = c.id;
 - ✅ All CRUD operations working
 - ✅ Search functionality working
 - ✅ Reports showing correct analytics
-- ✅ Authentication working
 - ✅ No critical bugs
 - ✅ Code documented
 
