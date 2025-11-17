@@ -42,14 +42,7 @@ A complete frontend application for managing college operations including studen
    npm run dev
    ```
 
-4. **Start the backend API in another terminal:**
-   ```bash
-   cd backend
-   npm install
-   npm run dev
-   ```
-
-5. **Open your browser and navigate to:**
+4. **Open your browser and navigate to:**
    - `http://localhost:5173` (or the port shown in terminal)
 
 ### For Backend Development
@@ -61,18 +54,17 @@ See **[BACKEND_PLAN.md](./BACKEND_PLAN.md)** for complete backend and database d
 - Development flowchart
 - SQL query examples
 
-> **Need a MySQL server without installing anything?**  
-> I added a portable server under `mysql/`. See **[MYSQL_SERVER.md](./MYSQL_SERVER.md)** for how to start/stop it.
+> The backend is optional for UI demos. If you need to run it, see **[BACKEND_PLAN.md](./BACKEND_PLAN.md)** and **[MYSQL_SERVER.md](./MYSQL_SERVER.md)**.
 
 ## 🎯 Usage
 
-The application uses the **live backend API** by default. If you want to run the UI without a backend, enable mock mode.
+The application uses **mock data by default**, so it works instantly without any backend/database setup. All CRUD operations manipulate in-memory demo data.
 
-### Mock API Mode
+### Connecting to a Real Backend (Optional)
 
-1. Set `VITE_USE_MOCKS=true` in your `.env`
-2. (Optional) Stop the backend server
-3. Restart `npm run dev` so Vite picks up the change
+1. Set `VITE_USE_MOCKS=false` in your `.env`
+2. Start the backend server (`cd backend && npm run dev`)
+3. Restart the frontend dev server
 
 ## 📁 Project Structure
 
