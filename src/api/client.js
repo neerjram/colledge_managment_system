@@ -1,7 +1,7 @@
 import axios from './axiosInstance.js'
 import { mockApi } from './mockData.js'
 
-const useMocks = (import.meta.env.VITE_USE_MOCKS ?? 'true') !== 'false'
+const useMocks = (import.meta.env.VITE_USE_MOCKS ?? 'false') !== 'false'
 
 export const api = {
   async get(path, { params } = {}) {

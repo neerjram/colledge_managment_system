@@ -8,9 +8,9 @@ import studentsRoutes from './routes/studentsRoutes.js';
 import facultyRoutes from './routes/facultyRoutes.js';
 import coursesRoutes from './routes/coursesRoutes.js';
 import departmentsRoutes from './routes/departmentsRoutes.js';
-// import dashboardRoutes from './routes/dashboardRoutes.js';
-// import enrollmentsRoutes from './routes/enrollmentsRoutes.js';
-// import reportsRoutes from './routes/reportsRoutes.js';
+import enrollmentsRoutes from './routes/enrollmentsRoutes.js';
+import dashboardRoutes from './routes/dashboardRoutes.js';
+import reportsRoutes from './routes/reportsRoutes.js';
 
 dotenv.config();
 
@@ -35,13 +35,13 @@ app.get('/api/health', (req, res) => {
 });
 
 // API Routes
+app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/students', studentsRoutes);
 app.use('/api/faculty', facultyRoutes);
 app.use('/api/courses', coursesRoutes);
 app.use('/api/departments', departmentsRoutes);
-// app.use('/api/dashboard', dashboardRoutes);
-// app.use('/api/enrollments', enrollmentsRoutes);
-// app.use('/api/reports', reportsRoutes);
+app.use('/api/enrollments', enrollmentsRoutes);
+app.use('/api/reports', reportsRoutes);
 
 // 404 handler
 app.use((req, res) => {

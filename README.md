@@ -37,12 +37,19 @@ A complete frontend application for managing college operations including studen
    npm install
    ```
 
-3. **Start the development server:**
+3. **Start the frontend dev server:**
    ```bash
    npm run dev
    ```
 
-4. **Open your browser and navigate to:**
+4. **Start the backend API in another terminal:**
+   ```bash
+   cd backend
+   npm install
+   npm run dev
+   ```
+
+5. **Open your browser and navigate to:**
    - `http://localhost:5173` (or the port shown in terminal)
 
 ### For Backend Development
@@ -56,15 +63,13 @@ See **[BACKEND_PLAN.md](./BACKEND_PLAN.md)** for complete backend and database d
 
 ## 🎯 Usage
 
-The application uses **mock data** by default, so it works without a backend. All CRUD operations are functional with in-memory storage.
+The application uses the **live backend API** by default. If you want to run the UI without a backend, enable mock mode.
 
 ### Mock API Mode
 
-By default, the app uses mock data (`VITE_USE_MOCKS=true`). To connect to a real backend:
-
-1. Set `VITE_USE_MOCKS=false` in your environment
-2. Ensure your backend API is running on the configured endpoint
-3. Update the base URL in `src/api/axiosInstance.js` if needed
+1. Set `VITE_USE_MOCKS=true` in your `.env`
+2. (Optional) Stop the backend server
+3. Restart `npm run dev` so Vite picks up the change
 
 ## 📁 Project Structure
 
@@ -116,7 +121,8 @@ colledge_managment_system/
 
 ### Environment Variables
 
-- `VITE_USE_MOCKS` - Set to `false` to use real backend API (default: `true`)
+- `VITE_USE_MOCKS` - Set to `true` only if you want to use mock data (default: `false`)
+- `VITE_API_URL` - Backend API base URL (default: `http://localhost:3000/api`)
 - `VITE_REQUIRE_LOGIN` - Set to `true` to enable login requirement (default: `false`)
 
 ### API Endpoints (when using backend)
