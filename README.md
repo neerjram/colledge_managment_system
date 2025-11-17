@@ -61,6 +61,9 @@ See **[BACKEND_PLAN.md](./BACKEND_PLAN.md)** for complete backend and database d
 - Development flowchart
 - SQL query examples
 
+> **Need a MySQL server without installing anything?**  
+> I added a portable server under `mysql/`. See **[MYSQL_SERVER.md](./MYSQL_SERVER.md)** for how to start/stop it.
+
 ## 🎯 Usage
 
 The application uses the **live backend API** by default. If you want to run the UI without a backend, enable mock mode.
